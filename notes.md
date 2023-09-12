@@ -18,3 +18,16 @@ https://feathersjs.com/guides/cli/client.html
 A Feathers application generated with Feathers v5 or later now exports a client file, including the types you defined in schemas on the server. For more information see the CLI guide
 
   git clone git@github.com:brentgroves/fchat.git
+
+from reports-feathers
+      "oauth": {
+      "redirect": "http://localhost:3000/",
+      "microsoft": {
+        "key": "29fa39d4-de57-4009-a46a-c561fa048562",
+        "secret": "QFf8Q~W2W5VjfCYep6lw6pItIBzt7r8nVbyJxbeE",
+        "scope": [
+          "openid"
+        ]
+        
+      }
+    }
