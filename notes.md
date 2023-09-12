@@ -10,5 +10,11 @@ curl 'http://localhost:3030/messages/' \
   --data-binary '{ "text": "Hello 2 from the console" }'
 
   NEXT: https://feathersjs.com/guides/frontend/javascript.html
+  https://feathersjs.com/guides/frameworks.html
+
+https://feathersjs.com/api/client.html#typed-client
+https://feathersjs.com/guides/cli/client.html
+
+A Feathers application generated with Feathers v5 or later now exports a client file, including the types you defined in schemas on the server. For more information see the CLI guide
 
   git clone git@github.com:brentgroves/fchat.git
