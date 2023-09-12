@@ -10,3 +10,5 @@ curl 'http://localhost:3030/messages/' \
   --data-binary '{ "text": "Hello 2 from the console" }'
 
   NEXT: https://feathersjs.com/guides/frontend/javascript.html
+
+  git clone git@github.com:brentgroves/fchat.git
