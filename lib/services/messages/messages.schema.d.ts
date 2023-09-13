@@ -10,34 +10,37 @@ export declare const messageSchema: import("@sinclair/typebox").TObject<{
         email: import("@sinclair/typebox").TString<string>;
         password: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
         githubId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+        microsoftId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
         avatar: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
     }>>;
 }>;
 export type Message = Static<typeof messageSchema>;
 export declare const messageValidator: import("@feathersjs/schema").Validator<any, any>;
 export declare const messageResolver: import("@feathersjs/schema").Resolver<{
-    id: number;
-    text: string;
     user: {
         password?: string | undefined;
         githubId?: number | undefined;
+        microsoftId?: number | undefined;
         avatar?: string | undefined;
-        id: number;
         email: string;
+        id: number;
     };
+    id: number;
+    text: string;
     createdAt: number;
     userId: number;
 }, HookContext>;
 export declare const messageExternalResolver: import("@feathersjs/schema").Resolver<{
-    id: number;
-    text: string;
     user: {
         password?: string | undefined;
         githubId?: number | undefined;
+        microsoftId?: number | undefined;
         avatar?: string | undefined;
-        id: number;
         email: string;
+        id: number;
     };
+    id: number;
+    text: string;
     createdAt: number;
     userId: number;
 }, HookContext>;
@@ -51,21 +54,23 @@ export declare const messageDataSchema: import("@sinclair/typebox").TPick<import
         email: import("@sinclair/typebox").TString<string>;
         password: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
         githubId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+        microsoftId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
         avatar: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
     }>>;
 }>, ["text"]>;
 export type MessageData = Static<typeof messageDataSchema>;
 export declare const messageDataValidator: import("@feathersjs/schema").Validator<any, any>;
 export declare const messageDataResolver: import("@feathersjs/schema").Resolver<{
-    id: number;
-    text: string;
     user: {
         password?: string | undefined;
         githubId?: number | undefined;
+        microsoftId?: number | undefined;
         avatar?: string | undefined;
-        id: number;
         email: string;
+        id: number;
     };
+    id: number;
+    text: string;
     createdAt: number;
     userId: number;
 }, HookContext>;
@@ -79,21 +84,23 @@ export declare const messagePatchSchema: import("@sinclair/typebox").TPartial<im
         email: import("@sinclair/typebox").TString<string>;
         password: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
         githubId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+        microsoftId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
         avatar: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
     }>>;
 }>>;
 export type MessagePatch = Static<typeof messagePatchSchema>;
 export declare const messagePatchValidator: import("@feathersjs/schema").Validator<any, any>;
 export declare const messagePatchResolver: import("@feathersjs/schema").Resolver<{
-    id: number;
-    text: string;
     user: {
         password?: string | undefined;
         githubId?: number | undefined;
+        microsoftId?: number | undefined;
         avatar?: string | undefined;
-        id: number;
         email: string;
+        id: number;
     };
+    id: number;
+    text: string;
     createdAt: number;
     userId: number;
 }, HookContext>;
@@ -107,6 +114,7 @@ export declare const messageQueryProperties: import("@sinclair/typebox").TPick<i
         email: import("@sinclair/typebox").TString<string>;
         password: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
         githubId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+        microsoftId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
         avatar: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
     }>>;
 }>, ["id", "text", "createdAt", "userId"]>;

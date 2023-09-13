@@ -35,14 +35,9 @@
       "passwordField": "password"
     },
     "oauth": {
-      "redirect": "http://localhost:3000/",
-      "microsoft": {
-        "key": "29fa39d4-de57-4009-a46a-c561fa048562",
-        "secret": "QFf8Q~W2W5VjfCYep6lw6pItIBzt7r8nVbyJxbeE",
-        "scope": [
-          "openid"
-        ]
-        
+      "github": {
+        "key": "e8c49517da48745d2213",
+        "secret": "515ea010126b5f45d5bec23b44d0f5940031264e"
       }
     }
   }

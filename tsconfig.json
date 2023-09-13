@@ -1,16 +1,19 @@
 {
   "ts-node": {
-    "files": true
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
   },
   "compilerOptions": {
     "target": "es2020",
-    "module": "commonjs",
     "outDir": "./lib",
     "rootDir": "./src",
-    "declaration": true,
-    "strict": true,
     "esModuleInterop": true,
-    "sourceMap": true
+    "module": "commonjs",
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
+    "strict": true,
+    "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
+    "declaration": true
   },
   "include": [
     "src"

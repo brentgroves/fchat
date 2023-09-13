@@ -5,6 +5,7 @@ export declare const userSchema: import("@sinclair/typebox").TObject<{
     email: import("@sinclair/typebox").TString<string>;
     password: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
     githubId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+    microsoftId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
     avatar: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
 }>;
 export type User = Static<typeof userSchema>;
@@ -12,38 +13,43 @@ export declare const userValidator: import("@feathersjs/schema").Validator<any, 
 export declare const userResolver: import("@feathersjs/schema").Resolver<{
     password?: string | undefined;
     githubId?: number | undefined;
+    microsoftId?: number | undefined;
     avatar?: string | undefined;
-    id: number;
     email: string;
+    id: number;
 }, HookContext>;
 export declare const userExternalResolver: import("@feathersjs/schema").Resolver<{
     password?: string | undefined;
     githubId?: number | undefined;
+    microsoftId?: number | undefined;
     avatar?: string | undefined;
-    id: number;
     email: string;
+    id: number;
 }, HookContext>;
 export declare const userDataSchema: import("@sinclair/typebox").TPick<import("@sinclair/typebox").TObject<{
     id: import("@sinclair/typebox").TNumber;
     email: import("@sinclair/typebox").TString<string>;
     password: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
     githubId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+    microsoftId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
     avatar: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
-}>, ["email", "password", "githubId", "avatar"]>;
+}>, ["email", "password", "githubId", "microsoftId", "avatar"]>;
 export type UserData = Static<typeof userDataSchema>;
 export declare const userDataValidator: import("@feathersjs/schema").Validator<any, any>;
 export declare const userDataResolver: import("@feathersjs/schema").Resolver<{
     password?: string | undefined;
     githubId?: number | undefined;
+    microsoftId?: number | undefined;
     avatar?: string | undefined;
-    id: number;
     email: string;
+    id: number;
 }, HookContext>;
 export declare const userPatchSchema: import("@sinclair/typebox").TPartial<import("@sinclair/typebox").TObject<{
     id: import("@sinclair/typebox").TNumber;
     email: import("@sinclair/typebox").TString<string>;
     password: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
     githubId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+    microsoftId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
     avatar: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
 }>>;
 export type UserPatch = Static<typeof userPatchSchema>;
@@ -51,38 +57,30 @@ export declare const userPatchValidator: import("@feathersjs/schema").Validator<
 export declare const userPatchResolver: import("@feathersjs/schema").Resolver<{
     password?: string | undefined;
     githubId?: number | undefined;
+    microsoftId?: number | undefined;
     avatar?: string | undefined;
-    id: number;
     email: string;
+    id: number;
 }, HookContext>;
 export declare const userQueryProperties: import("@sinclair/typebox").TPick<import("@sinclair/typebox").TObject<{
     id: import("@sinclair/typebox").TNumber;
     email: import("@sinclair/typebox").TString<string>;
     password: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
     githubId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+    microsoftId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
     avatar: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
-}>, ["id", "email", "githubId"]>;
+}>, ["id", "email", "githubId", "microsoftId"]>;
 export declare const userQuerySchema: import("@sinclair/typebox").TIntersect<[import("@sinclair/typebox").TIntersect<[import("@sinclair/typebox").TPartial<import("@sinclair/typebox").TObject<{
     $limit: import("@sinclair/typebox").TNumber;
     $skip: import("@sinclair/typebox").TNumber;
     $sort: import("@sinclair/typebox").TObject<{
-        id: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TInteger>;
         email: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TInteger>;
+        id: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TInteger>;
         githubId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TInteger>;
+        microsoftId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TInteger>;
     }>;
-    $select: import("@sinclair/typebox").TUnsafe<("id" | "email" | "githubId")[]>;
+    $select: import("@sinclair/typebox").TUnsafe<("email" | "id" | "githubId" | "microsoftId")[]>;
     $and: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TUnion<[import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TObject<{
-        id: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TUnion<[import("@sinclair/typebox").TNumber, import("@sinclair/typebox").TPartial<import("@sinclair/typebox").TIntersect<[import("@sinclair/typebox").TObject<{
-            $gt: import("@sinclair/typebox").TNumber;
-            $gte: import("@sinclair/typebox").TNumber;
-            $lt: import("@sinclair/typebox").TNumber;
-            $lte: import("@sinclair/typebox").TNumber;
-            $ne: import("@sinclair/typebox").TNumber;
-            $in: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TNumber>;
-            $nin: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TNumber>;
-        }>, import("@sinclair/typebox").TObject<{
-            [key: string]: import("@sinclair/typebox").TSchema;
-        } | undefined>]>>]>>;
         email: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TUnion<[import("@sinclair/typebox").TString<string>, import("@sinclair/typebox").TPartial<import("@sinclair/typebox").TIntersect<[import("@sinclair/typebox").TObject<{
             $gt: import("@sinclair/typebox").TString<string>;
             $gte: import("@sinclair/typebox").TString<string>;
@@ -91,6 +89,17 @@ export declare const userQuerySchema: import("@sinclair/typebox").TIntersect<[im
             $ne: import("@sinclair/typebox").TString<string>;
             $in: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TString<string>>;
             $nin: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TString<string>>;
+        }>, import("@sinclair/typebox").TObject<{
+            [key: string]: import("@sinclair/typebox").TSchema;
+        } | undefined>]>>]>>;
+        id: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TUnion<[import("@sinclair/typebox").TNumber, import("@sinclair/typebox").TPartial<import("@sinclair/typebox").TIntersect<[import("@sinclair/typebox").TObject<{
+            $gt: import("@sinclair/typebox").TNumber;
+            $gte: import("@sinclair/typebox").TNumber;
+            $lt: import("@sinclair/typebox").TNumber;
+            $lte: import("@sinclair/typebox").TNumber;
+            $ne: import("@sinclair/typebox").TNumber;
+            $in: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TNumber>;
+            $nin: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TNumber>;
         }>, import("@sinclair/typebox").TObject<{
             [key: string]: import("@sinclair/typebox").TSchema;
         } | undefined>]>>]>>;
@@ -105,19 +114,19 @@ export declare const userQuerySchema: import("@sinclair/typebox").TIntersect<[im
         }>, import("@sinclair/typebox").TObject<{
             [key: string]: import("@sinclair/typebox").TSchema;
         } | undefined>]>>]>>;
+        microsoftId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TUnion<[import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>, import("@sinclair/typebox").TPartial<import("@sinclair/typebox").TIntersect<[import("@sinclair/typebox").TObject<{
+            $gt: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+            $gte: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+            $lt: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+            $lte: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+            $ne: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+            $in: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>>;
+            $nin: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>>;
+        }>, import("@sinclair/typebox").TObject<{
+            [key: string]: import("@sinclair/typebox").TSchema;
+        } | undefined>]>>]>>;
     }>>, import("@sinclair/typebox").TObject<{
         $or: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TObject<{
-            id: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TUnion<[import("@sinclair/typebox").TNumber, import("@sinclair/typebox").TPartial<import("@sinclair/typebox").TIntersect<[import("@sinclair/typebox").TObject<{
-                $gt: import("@sinclair/typebox").TNumber;
-                $gte: import("@sinclair/typebox").TNumber;
-                $lt: import("@sinclair/typebox").TNumber;
-                $lte: import("@sinclair/typebox").TNumber;
-                $ne: import("@sinclair/typebox").TNumber;
-                $in: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TNumber>;
-                $nin: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TNumber>;
-            }>, import("@sinclair/typebox").TObject<{
-                [key: string]: import("@sinclair/typebox").TSchema;
-            } | undefined>]>>]>>;
             email: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TUnion<[import("@sinclair/typebox").TString<string>, import("@sinclair/typebox").TPartial<import("@sinclair/typebox").TIntersect<[import("@sinclair/typebox").TObject<{
                 $gt: import("@sinclair/typebox").TString<string>;
                 $gte: import("@sinclair/typebox").TString<string>;
@@ -126,6 +135,17 @@ export declare const userQuerySchema: import("@sinclair/typebox").TIntersect<[im
                 $ne: import("@sinclair/typebox").TString<string>;
                 $in: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TString<string>>;
                 $nin: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TString<string>>;
+            }>, import("@sinclair/typebox").TObject<{
+                [key: string]: import("@sinclair/typebox").TSchema;
+            } | undefined>]>>]>>;
+            id: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TUnion<[import("@sinclair/typebox").TNumber, import("@sinclair/typebox").TPartial<import("@sinclair/typebox").TIntersect<[import("@sinclair/typebox").TObject<{
+                $gt: import("@sinclair/typebox").TNumber;
+                $gte: import("@sinclair/typebox").TNumber;
+                $lt: import("@sinclair/typebox").TNumber;
+                $lte: import("@sinclair/typebox").TNumber;
+                $ne: import("@sinclair/typebox").TNumber;
+                $in: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TNumber>;
+                $nin: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TNumber>;
             }>, import("@sinclair/typebox").TObject<{
                 [key: string]: import("@sinclair/typebox").TSchema;
             } | undefined>]>>]>>;
@@ -140,20 +160,20 @@ export declare const userQuerySchema: import("@sinclair/typebox").TIntersect<[im
             }>, import("@sinclair/typebox").TObject<{
                 [key: string]: import("@sinclair/typebox").TSchema;
             } | undefined>]>>]>>;
+            microsoftId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TUnion<[import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>, import("@sinclair/typebox").TPartial<import("@sinclair/typebox").TIntersect<[import("@sinclair/typebox").TObject<{
+                $gt: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+                $gte: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+                $lt: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+                $lte: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+                $ne: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+                $in: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>>;
+                $nin: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>>;
+            }>, import("@sinclair/typebox").TObject<{
+                [key: string]: import("@sinclair/typebox").TSchema;
+            } | undefined>]>>]>>;
         }>>>;
     }>]>>;
     $or: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TObject<{
-        id: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TUnion<[import("@sinclair/typebox").TNumber, import("@sinclair/typebox").TPartial<import("@sinclair/typebox").TIntersect<[import("@sinclair/typebox").TObject<{
-            $gt: import("@sinclair/typebox").TNumber;
-            $gte: import("@sinclair/typebox").TNumber;
-            $lt: import("@sinclair/typebox").TNumber;
-            $lte: import("@sinclair/typebox").TNumber;
-            $ne: import("@sinclair/typebox").TNumber;
-            $in: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TNumber>;
-            $nin: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TNumber>;
-        }>, import("@sinclair/typebox").TObject<{
-            [key: string]: import("@sinclair/typebox").TSchema;
-        } | undefined>]>>]>>;
         email: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TUnion<[import("@sinclair/typebox").TString<string>, import("@sinclair/typebox").TPartial<import("@sinclair/typebox").TIntersect<[import("@sinclair/typebox").TObject<{
             $gt: import("@sinclair/typebox").TString<string>;
             $gte: import("@sinclair/typebox").TString<string>;
@@ -162,6 +182,17 @@ export declare const userQuerySchema: import("@sinclair/typebox").TIntersect<[im
             $ne: import("@sinclair/typebox").TString<string>;
             $in: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TString<string>>;
             $nin: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TString<string>>;
+        }>, import("@sinclair/typebox").TObject<{
+            [key: string]: import("@sinclair/typebox").TSchema;
+        } | undefined>]>>]>>;
+        id: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TUnion<[import("@sinclair/typebox").TNumber, import("@sinclair/typebox").TPartial<import("@sinclair/typebox").TIntersect<[import("@sinclair/typebox").TObject<{
+            $gt: import("@sinclair/typebox").TNumber;
+            $gte: import("@sinclair/typebox").TNumber;
+            $lt: import("@sinclair/typebox").TNumber;
+            $lte: import("@sinclair/typebox").TNumber;
+            $ne: import("@sinclair/typebox").TNumber;
+            $in: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TNumber>;
+            $nin: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TNumber>;
         }>, import("@sinclair/typebox").TObject<{
             [key: string]: import("@sinclair/typebox").TSchema;
         } | undefined>]>>]>>;
@@ -176,19 +207,19 @@ export declare const userQuerySchema: import("@sinclair/typebox").TIntersect<[im
         }>, import("@sinclair/typebox").TObject<{
             [key: string]: import("@sinclair/typebox").TSchema;
         } | undefined>]>>]>>;
+        microsoftId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TUnion<[import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>, import("@sinclair/typebox").TPartial<import("@sinclair/typebox").TIntersect<[import("@sinclair/typebox").TObject<{
+            $gt: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+            $gte: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+            $lt: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+            $lte: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+            $ne: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+            $in: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>>;
+            $nin: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>>;
+        }>, import("@sinclair/typebox").TObject<{
+            [key: string]: import("@sinclair/typebox").TSchema;
+        } | undefined>]>>]>>;
     }>>>;
 }>>, import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TObject<{
-    id: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TUnion<[import("@sinclair/typebox").TNumber, import("@sinclair/typebox").TPartial<import("@sinclair/typebox").TIntersect<[import("@sinclair/typebox").TObject<{
-        $gt: import("@sinclair/typebox").TNumber;
-        $gte: import("@sinclair/typebox").TNumber;
-        $lt: import("@sinclair/typebox").TNumber;
-        $lte: import("@sinclair/typebox").TNumber;
-        $ne: import("@sinclair/typebox").TNumber;
-        $in: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TNumber>;
-        $nin: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TNumber>;
-    }>, import("@sinclair/typebox").TObject<{
-        [key: string]: import("@sinclair/typebox").TSchema;
-    } | undefined>]>>]>>;
     email: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TUnion<[import("@sinclair/typebox").TString<string>, import("@sinclair/typebox").TPartial<import("@sinclair/typebox").TIntersect<[import("@sinclair/typebox").TObject<{
         $gt: import("@sinclair/typebox").TString<string>;
         $gte: import("@sinclair/typebox").TString<string>;
@@ -200,7 +231,29 @@ export declare const userQuerySchema: import("@sinclair/typebox").TIntersect<[im
     }>, import("@sinclair/typebox").TObject<{
         [key: string]: import("@sinclair/typebox").TSchema;
     } | undefined>]>>]>>;
+    id: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TUnion<[import("@sinclair/typebox").TNumber, import("@sinclair/typebox").TPartial<import("@sinclair/typebox").TIntersect<[import("@sinclair/typebox").TObject<{
+        $gt: import("@sinclair/typebox").TNumber;
+        $gte: import("@sinclair/typebox").TNumber;
+        $lt: import("@sinclair/typebox").TNumber;
+        $lte: import("@sinclair/typebox").TNumber;
+        $ne: import("@sinclair/typebox").TNumber;
+        $in: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TNumber>;
+        $nin: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TNumber>;
+    }>, import("@sinclair/typebox").TObject<{
+        [key: string]: import("@sinclair/typebox").TSchema;
+    } | undefined>]>>]>>;
     githubId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TUnion<[import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>, import("@sinclair/typebox").TPartial<import("@sinclair/typebox").TIntersect<[import("@sinclair/typebox").TObject<{
+        $gt: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+        $gte: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+        $lt: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+        $lte: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+        $ne: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+        $in: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>>;
+        $nin: import("@sinclair/typebox").TArray<import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>>;
+    }>, import("@sinclair/typebox").TObject<{
+        [key: string]: import("@sinclair/typebox").TSchema;
+    } | undefined>]>>]>>;
+    microsoftId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TUnion<[import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>, import("@sinclair/typebox").TPartial<import("@sinclair/typebox").TIntersect<[import("@sinclair/typebox").TObject<{
         $gt: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
         $gte: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
         $lt: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
@@ -218,21 +271,13 @@ export declare const userQueryResolver: import("@feathersjs/schema").Resolver<Pa
     $limit: number;
     $skip: number;
     $sort: {
-        id?: number | undefined;
         email?: number | undefined;
+        id?: number | undefined;
         githubId?: number | undefined;
+        microsoftId?: number | undefined;
     };
-    $select: ("id" | "email" | "githubId")[];
+    $select: ("email" | "id" | "githubId" | "microsoftId")[];
     $and: ({
-        id?: number | Partial<{
-            $gt: number;
-            $gte: number;
-            $lt: number;
-            $lte: number;
-            $ne: number;
-            $in: number[];
-            $nin: number[];
-        } & {}> | undefined;
         email?: string | Partial<{
             $gt: string;
             $gte: string;
@@ -241,6 +286,15 @@ export declare const userQueryResolver: import("@feathersjs/schema").Resolver<Pa
             $ne: string;
             $in: string[];
             $nin: string[];
+        } & {}> | undefined;
+        id?: number | Partial<{
+            $gt: number;
+            $gte: number;
+            $lt: number;
+            $lte: number;
+            $ne: number;
+            $in: number[];
+            $nin: number[];
         } & {}> | undefined;
         githubId?: number | Partial<{
             $gt?: number | undefined;
@@ -251,17 +305,17 @@ export declare const userQueryResolver: import("@feathersjs/schema").Resolver<Pa
             $in: number[];
             $nin: number[];
         } & {}> | undefined;
+        microsoftId?: number | Partial<{
+            $gt?: number | undefined;
+            $gte?: number | undefined;
+            $lt?: number | undefined;
+            $lte?: number | undefined;
+            $ne?: number | undefined;
+            $in: number[];
+            $nin: number[];
+        } & {}> | undefined;
     } | {
         $or: {
-            id?: number | Partial<{
-                $gt: number;
-                $gte: number;
-                $lt: number;
-                $lte: number;
-                $ne: number;
-                $in: number[];
-                $nin: number[];
-            } & {}> | undefined;
             email?: string | Partial<{
                 $gt: string;
                 $gte: string;
@@ -271,7 +325,25 @@ export declare const userQueryResolver: import("@feathersjs/schema").Resolver<Pa
                 $in: string[];
                 $nin: string[];
             } & {}> | undefined;
+            id?: number | Partial<{
+                $gt: number;
+                $gte: number;
+                $lt: number;
+                $lte: number;
+                $ne: number;
+                $in: number[];
+                $nin: number[];
+            } & {}> | undefined;
             githubId?: number | Partial<{
+                $gt?: number | undefined;
+                $gte?: number | undefined;
+                $lt?: number | undefined;
+                $lte?: number | undefined;
+                $ne?: number | undefined;
+                $in: number[];
+                $nin: number[];
+            } & {}> | undefined;
+            microsoftId?: number | Partial<{
                 $gt?: number | undefined;
                 $gte?: number | undefined;
                 $lt?: number | undefined;
@@ -283,15 +355,6 @@ export declare const userQueryResolver: import("@feathersjs/schema").Resolver<Pa
         }[];
     })[];
     $or: {
-        id?: number | Partial<{
-            $gt: number;
-            $gte: number;
-            $lt: number;
-            $lte: number;
-            $ne: number;
-            $in: number[];
-            $nin: number[];
-        } & {}> | undefined;
         email?: string | Partial<{
             $gt: string;
             $gte: string;
@@ -300,6 +363,15 @@ export declare const userQueryResolver: import("@feathersjs/schema").Resolver<Pa
             $ne: string;
             $in: string[];
             $nin: string[];
+        } & {}> | undefined;
+        id?: number | Partial<{
+            $gt: number;
+            $gte: number;
+            $lt: number;
+            $lte: number;
+            $ne: number;
+            $in: number[];
+            $nin: number[];
         } & {}> | undefined;
         githubId?: number | Partial<{
             $gt?: number | undefined;
@@ -310,17 +382,17 @@ export declare const userQueryResolver: import("@feathersjs/schema").Resolver<Pa
             $in: number[];
             $nin: number[];
         } & {}> | undefined;
+        microsoftId?: number | Partial<{
+            $gt?: number | undefined;
+            $gte?: number | undefined;
+            $lt?: number | undefined;
+            $lte?: number | undefined;
+            $ne?: number | undefined;
+            $in: number[];
+            $nin: number[];
+        } & {}> | undefined;
     }[];
 }> & {
-    id?: number | Partial<{
-        $gt: number;
-        $gte: number;
-        $lt: number;
-        $lte: number;
-        $ne: number;
-        $in: number[];
-        $nin: number[];
-    } & {}> | undefined;
     email?: string | Partial<{
         $gt: string;
         $gte: string;
@@ -330,7 +402,25 @@ export declare const userQueryResolver: import("@feathersjs/schema").Resolver<Pa
         $in: string[];
         $nin: string[];
     } & {}> | undefined;
+    id?: number | Partial<{
+        $gt: number;
+        $gte: number;
+        $lt: number;
+        $lte: number;
+        $ne: number;
+        $in: number[];
+        $nin: number[];
+    } & {}> | undefined;
     githubId?: number | Partial<{
+        $gt?: number | undefined;
+        $gte?: number | undefined;
+        $lt?: number | undefined;
+        $lte?: number | undefined;
+        $ne?: number | undefined;
+        $in: number[];
+        $nin: number[];
+    } & {}> | undefined;
+    microsoftId?: number | Partial<{
         $gt?: number | undefined;
         $gte?: number | undefined;
         $lt?: number | undefined;

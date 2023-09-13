@@ -12,15 +12,6 @@ declare module './declarations' {
   }
 }
 
-class MicrosoftStrategy extends OAuthStrategy {
-  async getEntityData(profile: OAuthProfile, existing: any, params: Params) {
-    const baseData = await super.getEntityData(profile, existing, params)
-    return {
-      ...baseData,
-      email: profile.mail
-    };
-  }
-}
 class GitHubStrategy extends OAuthStrategy {
   async getEntityData(profile: OAuthProfile, existing: any, params: Params) {
     const baseData = await super.getEntityData(profile, existing, params)
@@ -40,8 +31,7 @@ export const authentication = (app: Application) => {
   authentication.register('jwt', new JWTStrategy())
   authentication.register('local', new LocalStrategy())
   // authentication.register('github', new OAuthStrategy())
-  // authentication.register('github', new GitHubStrategy())
-  authentication.register('microsoft', new MicrosoftStrategy())
+  authentication.register('github', new GitHubStrategy())
   app.use('authentication', authentication)
   app.configure(oauth())
 }
