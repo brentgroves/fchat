@@ -29,6 +29,10 @@ http://localhost:3030/oauth/microsoft
 
 https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=29fa39d4-de57-4009-a46a-c561fa048562&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3030%2Foauth%2Fmicrosoft%2Fcallback&scope=openid
 
+http://localhost:3030/#error=Cannot%20read%20properties%20of%20undefined%20%28reading%20%27sub%27%29
+
+http://localhost:3030/#error=validation%20failed
+
 e8c49517da48745d2213
 515ea010126b5f45d5bec23b44d0f5940031264e
 
