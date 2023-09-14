@@ -35,7 +35,6 @@
       "passwordField": "password"
     },
     "oauth": {
-      "redirect": "http://localhost:3000/",
       "microsoft": {
         "key": "29fa39d4-de57-4009-a46a-c561fa048562",
         "secret": "QFf8Q~W2W5VjfCYep6lw6pItIBzt7r8nVbyJxbeE",

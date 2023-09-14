@@ -8,9 +8,12 @@ export declare const messageSchema: import("@sinclair/typebox").TObject<{
     user: import("@sinclair/typebox").TRef<import("@sinclair/typebox").TObject<{
         id: import("@sinclair/typebox").TNumber;
         email: import("@sinclair/typebox").TString<string>;
+        name: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
+        family_name: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
+        given_name: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
         password: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
         githubId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
-        microsoftId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+        microsoftId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
         avatar: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
     }>>;
 }>;
@@ -19,8 +22,11 @@ export declare const messageValidator: import("@feathersjs/schema").Validator<an
 export declare const messageResolver: import("@feathersjs/schema").Resolver<{
     user: {
         password?: string | undefined;
+        name?: string | undefined;
+        family_name?: string | undefined;
+        given_name?: string | undefined;
         githubId?: number | undefined;
-        microsoftId?: number | undefined;
+        microsoftId?: string | undefined;
         avatar?: string | undefined;
         email: string;
         id: number;
@@ -33,8 +39,11 @@ export declare const messageResolver: import("@feathersjs/schema").Resolver<{
 export declare const messageExternalResolver: import("@feathersjs/schema").Resolver<{
     user: {
         password?: string | undefined;
+        name?: string | undefined;
+        family_name?: string | undefined;
+        given_name?: string | undefined;
         githubId?: number | undefined;
-        microsoftId?: number | undefined;
+        microsoftId?: string | undefined;
         avatar?: string | undefined;
         email: string;
         id: number;
@@ -52,9 +61,12 @@ export declare const messageDataSchema: import("@sinclair/typebox").TPick<import
     user: import("@sinclair/typebox").TRef<import("@sinclair/typebox").TObject<{
         id: import("@sinclair/typebox").TNumber;
         email: import("@sinclair/typebox").TString<string>;
+        name: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
+        family_name: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
+        given_name: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
         password: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
         githubId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
-        microsoftId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+        microsoftId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
         avatar: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
     }>>;
 }>, ["text"]>;
@@ -63,8 +75,11 @@ export declare const messageDataValidator: import("@feathersjs/schema").Validato
 export declare const messageDataResolver: import("@feathersjs/schema").Resolver<{
     user: {
         password?: string | undefined;
+        name?: string | undefined;
+        family_name?: string | undefined;
+        given_name?: string | undefined;
         githubId?: number | undefined;
-        microsoftId?: number | undefined;
+        microsoftId?: string | undefined;
         avatar?: string | undefined;
         email: string;
         id: number;
@@ -82,9 +97,12 @@ export declare const messagePatchSchema: import("@sinclair/typebox").TPartial<im
     user: import("@sinclair/typebox").TRef<import("@sinclair/typebox").TObject<{
         id: import("@sinclair/typebox").TNumber;
         email: import("@sinclair/typebox").TString<string>;
+        name: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
+        family_name: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
+        given_name: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
         password: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
         githubId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
-        microsoftId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+        microsoftId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
         avatar: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
     }>>;
 }>>;
@@ -93,8 +111,11 @@ export declare const messagePatchValidator: import("@feathersjs/schema").Validat
 export declare const messagePatchResolver: import("@feathersjs/schema").Resolver<{
     user: {
         password?: string | undefined;
+        name?: string | undefined;
+        family_name?: string | undefined;
+        given_name?: string | undefined;
         githubId?: number | undefined;
-        microsoftId?: number | undefined;
+        microsoftId?: string | undefined;
         avatar?: string | undefined;
         email: string;
         id: number;
@@ -112,9 +133,12 @@ export declare const messageQueryProperties: import("@sinclair/typebox").TPick<i
     user: import("@sinclair/typebox").TRef<import("@sinclair/typebox").TObject<{
         id: import("@sinclair/typebox").TNumber;
         email: import("@sinclair/typebox").TString<string>;
+        name: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
+        family_name: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
+        given_name: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
         password: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
         githubId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
-        microsoftId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TNumber>;
+        microsoftId: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
         avatar: import("@sinclair/typebox").TOptional<import("@sinclair/typebox").TString<string>>;
     }>>;
 }>, ["id", "text", "createdAt", "userId"]>;

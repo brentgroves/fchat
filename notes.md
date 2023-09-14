@@ -27,21 +27,22 @@ http://localhost:3030/oauth/github
 # login to microsoft
 http://localhost:3030/oauth/microsoft
 
-https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=29fa39d4-de57-4009-a46a-c561fa048562&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3030%2Foauth%2Fmicrosoft%2Fcallback&scope=openid
+{
+  sub: "iU9DuqqPNj_pv-X09P5yG_h4MhyolHYwFNIiG2-tXqo",
+  name: "Brent Groves",
+  family_name: "Groves",
+  given_name: "Brent",
+  picture: "https://graph.microsoft.com/v1.0/me/photo/$value",
+  email: "brentgroves@1hkt5t.onmicrosoft.com",
+}
 
-http://localhost:3030/#error=Cannot%20read%20properties%20of%20undefined%20%28reading%20%27sub%27%29
+http://localhost:3030/#access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE2OTQ3MjU3ODcsImV4cCI6MTY5NDgxMjE4NywiYXVkIjoiaHR0cHM6Ly95b3VyZG9tYWluLmNvbSIsInN1YiI6IjUiLCJqdGkiOiJjZDc0ZjM0OC0yMzlmLTQwMTAtYjJmZi00ZmJjYzU0NGFhNjgifQ.L-gkD1HsRnlJcuGtJcg0QZTouDR6ktdgC3LhC3LGIoY
 
-http://localhost:3030/#error=validation%20failed
-
-e8c49517da48745d2213
-515ea010126b5f45d5bec23b44d0f5940031264e
-
-http://localhost:3030/#access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE2OTQ2Mzk4NDgsImV4cCI6MTY5NDcyNjI0OCwiYXVkIjoiaHR0cHM6Ly95b3VyZG9tYWluLmNvbSIsInN1YiI6IjIiLCJqdGkiOiIzZDc1OWE2Yy1lOWU4LTQzNzEtYjExYS0yNzhhOGYyMGFmYzAifQ.yKnWt7Xucr3WKeTyrYyr2HUBZQylnJgGbCyzBEwbeZ4
 
 curl 'http://localhost:3030/messages/' \
   -H 'Content-Type: application/json' \
-  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE2OTQ2Mzk4NDgsImV4cCI6MTY5NDcyNjI0OCwiYXVkIjoiaHR0cHM6Ly95b3VyZG9tYWluLmNvbSIsInN1YiI6IjIiLCJqdGkiOiIzZDc1OWE2Yy1lOWU4LTQzNzEtYjExYS0yNzhhOGYyMGFmYzAifQ.yKnWt7Xucr3WKeTyrYyr2HUBZQylnJgGbCyzBEwbeZ4' \
-  --data-binary '{ "text": "Hello 4 from the console" }'
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE2OTQ3MjU3ODcsImV4cCI6MTY5NDgxMjE4NywiYXVkIjoiaHR0cHM6Ly95b3VyZG9tYWluLmNvbSIsInN1YiI6IjUiLCJqdGkiOiJjZDc0ZjM0OC0yMzlmLTQwMTAtYjJmZi00ZmJjYzU0NGFhNjgifQ.L-gkD1HsRnlJcuGtJcg0QZTouDR6ktdgC3LhC3LGIoY' \
+  --data-binary '{ "text": "Hello 6 from the console" }'
 
   NEXT: https://feathersjs.com/guides/frontend/javascript.html
   https://feathersjs.com/guides/frameworks.html

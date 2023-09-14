@@ -13,10 +13,14 @@ export const userSchema = Type.Object(
   {
     id: Type.Number(),
     email: Type.String(),
+    name: Type.Optional(Type.String()),
+    family_name: Type.Optional(Type.String()),
+    given_name: Type.Optional(Type.String()),
     password: Type.Optional(Type.String()),
     githubId: Type.Optional(Type.Number()),
     // microsoftId:{ type: String },
-    microsoftId: Type.Optional(Type.Number()),
+    // microsoftId: Type.Optional(Type.Number()),  // The microsoftId has dashes in it.
+    microsoftId: Type.Optional(Type.String()),
     avatar: Type.Optional(Type.String())
   },
   { $id: 'User', additionalProperties: false }
@@ -33,7 +37,7 @@ export const userExternalResolver = resolve<User, HookContext>({
 // Schema for creating new users
 export const userDataSchema = Type.Pick(
   userSchema,
-  ['email', 'password', 'githubId', 'microsoftId','avatar'],
+  ['email', 'name','family_name','given_name','password', 'githubId', 'microsoftId','avatar'],
   {
     $id: 'UserData',
     additionalProperties: false
@@ -69,7 +73,7 @@ export const userPatchResolver = resolve<User, HookContext>({
 })
 
 // Schema for allowed query properties
-export const userQueryProperties = Type.Pick(userSchema, ['id', 'email', 'githubId', 'microsoftId'])
+export const userQueryProperties = Type.Pick(userSchema, ['id', 'email', 'name','family_name','given_name','githubId', 'microsoftId'])
 
 
 

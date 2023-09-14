@@ -17,7 +17,11 @@ class MicrosoftStrategy extends OAuthStrategy {
     const baseData = await super.getEntityData(profile, existing, params)
     return {
       ...baseData,
-      email: profile.mail
+      name: profile.name,
+      family_name: profile.family_name,
+      given_name: profile.given_name,
+      avatar: profile.picture,
+      email: profile.email
     };
   }
 }
