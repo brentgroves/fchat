@@ -20,7 +20,7 @@ class MicrosoftStrategy extends OAuthStrategy {
       name: profile.name,
       family_name: profile.family_name,
       given_name: profile.given_name,
-      avatar: profile.picture,
+      // avatar: profile.picture, // can't view this without a microsoft authentication token.
       email: profile.email
     };
   }
